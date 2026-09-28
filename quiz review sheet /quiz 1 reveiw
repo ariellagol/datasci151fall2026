@@ -70,7 +70,7 @@ categories = ["_", "_",...]
 hight = [1,2,3,4]
 plt.bar ( X =___, Height = ___)
 plt.title("__")
-plt.ylabel ("__")
+plt.ylabel("__")
 plt.xlabel("__")
 plt.grid()
 plt.show()

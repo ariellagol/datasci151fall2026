@@ -1,0 +1,6 @@
+Control Statements - if, elif, else 
+if: (if the condtion is true, the indented tab will run; if false, indented block will be skipped )
+else: indented statement will be run is if is FALSE
+
+
+append method - 

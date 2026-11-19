@@ -1,0 +1,70 @@
+Lec 8:
+Display(var.head()) -- this is a method that prints the first 5 rows of variables. put a diff # in the () to print a diff amount!
+
+extracting columns/var names:
+1. Variable.columns -- prints all column names 
+→ var.columns[2] – prints name of 2nd column
+**belongs to pandas index object 
+2. Dir(variable) → names the attributes/methods available on the object 
+
+
+Chaining: A way to extract the names in a single line
+**read from left to right. 
+Ex: Car_cols = carfeatures.columns.values 
+Extracts column names, and then turns those names into a numpy array
+Could also do carfeatures.columns.values.tolist 
+Changes the type to a list
+
+
+
+Sorting by column/variable: can sort dataframes according to 1 of the variables:
+Dataframe.sort_values 
+→ ex: dataframe.sort_values(by = “mpg”)
+**auto does ascending. If you want high to low do: datafrane.sortvalues( by = “mpg”, ascending = Fase)
+
+Subsetting by row/column position: use .iloc 
+**this is an attribute not a method (use square brackets) 
+Carfeatures.iloc[0,0] → pulls the value from 1st row, 1st column
+Order is ROW, COLUMNS. 
+Use : if you want all features from one
+When you do [1:6] it prints 1,2,3,4,5. Leaves the last number OUT
+Last 3 rows: carfeatures.iloc[-3,:]
+Second to last 2 rows: carfeatures.iloc[-3:-1, :]
+
+Adding variables: Manipulating Data to add new vars/columns
+First make the new var/column based on old ones
+Then do dataset[“name”] = name to add this var to the df 
+.apply applies your function to every var
+
+Random assignment: to divide dataset into 4 random groups use numpy.random to assign each person 1,2,3,4:
+(#rows, #columns) = Dataframe.shape
+Group_no = np.random.choice([1,2,3,4], size = num_rows])
+1,2,3,4 are possible group numbers
+Size = num_rows tells numpy how many numbers to draw
+dataframe[“groupID”] = group_no
+Dataframe.head() – shows you all columns, including new column
+
+
+Filtering dataframes based on logical expressions:
+Dataset.query(“logical expression”)
+→ if you’re using a global variable in your expression must put @ in front of it 
+
+
+Whitespace → cannot have any spaces in python. 
+Use `` backticks around the words with whitespaces for them to work
+
+Visualizing subsets of data:
+pd.unique(dataset[“col name”])
+***extracts unique elements, 1 of every element, even if its repeated in dataset 
+
+
+To plot 2 overlapping plots:
+If you do plt.scatter x2, and then only plt.show x1 at the end, you get 2 overlapping plots
+
+
+
+Lecture 9a: Merging:
+Pd.merge (left = df1, right = df2, how = “left/right”, on = “the shared column name you wanna merge on”, suffixes = (“_df1”, (“_df2”)
+If you wanna merge multiple files, you do multiple merges, one after the other 
+
+
